@@ -60,3 +60,4 @@ const addPhotos = () => {
 };
 
 addPhotos();
+checkMaxLength('ggvtufvtfv');
