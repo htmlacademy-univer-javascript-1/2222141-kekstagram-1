@@ -27,28 +27,26 @@ const DESCRIPTIONS = [
 const arrayObjects = [];
 
 const arrayComments = (item) => {
-    const arr = [];
-    for (let i = 0; i < item; i++){
-      arr.push({
-        id: i,
-        avatar: 'img/avatar-{{getRandomInt(1, 6)}}.svg',
-        message: getRandomElement(MESSAGES),
-        name: getRandomElement(NAMES)
-      });
-    }
-    return arr;
-  };
-  
-  const addPhotos = () => {
-    for (let i = 0; i < COUNT; i++){
-      arrayObjects.push({
-        id: i,
-        url: 'photos/{{i + 1}}.jpg',
-        description: getRandomElement(DESCRIPTIONS),
-        likes: getRandomInt(15, 200),
-        comments: arrayComments(getRandomInt(0, 2))
-      });
-    }
-  };
-  
-  export{addPhotos};
+  const arr = [];
+  for (let i = 0; i < item; i++){
+    arr.push({
+      id: i,
+      avatar: 'img/avatar-{{getRandomInt(1, 6)}}.svg',
+      message: getRandomElement(MESSAGES),
+      name: getRandomElement(NAMES)
+    });
+  }
+  return arr;
+};
+const addPhotos = () => {
+  for (let i = 0; i < COUNT; i++){
+    arrayObjects.push({
+      id: i,
+      url: 'photos/{{i + 1}}.jpg',
+      description: getRandomElement(DESCRIPTIONS),
+      likes: getRandomInt(15, 200),
+      comments: arrayComments(getRandomInt(0, 2))
+    });
+  }
+};
+export{addPhotos};
