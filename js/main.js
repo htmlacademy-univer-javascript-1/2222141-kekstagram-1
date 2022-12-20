@@ -1,4 +1,7 @@
-import './util.js';
-import {addPhotos} from './data.js';
+import { PHOTO_DESCRIPTION_COUNT } from './generation-config.js';
+import { createPhotoDescriptions } from './generation.js';
+import { renderThumbnails } from './thumbnails-render.js';
 
-addPhotos();
+const photoDescriptions = createPhotoDescriptions(PHOTO_DESCRIPTION_COUNT);
+renderThumbnails(photoDescriptions);
+
