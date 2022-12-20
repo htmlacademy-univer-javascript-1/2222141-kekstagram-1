@@ -10,16 +10,19 @@ import {
   LIKES_RANGE
 } from './generation-config.js';
 
-function createCommentText () {
+const createCommentText = () => {
   const sentencesCount = getRandomInteger(SENTENCES_COUNT_RANGE.min, SENTENCES_COUNT_RANGE.max);
   const chosenSentencesIndexes = getNonRepeatingRandoms(0, COMMENT_VARIANTS.length - 1, sentencesCount, []);
   let result = '';
   for (let i = 0; i < sentencesCount; i++)
   {
+    if (i > 0) {
+      result += ' ';
+    }
     result += COMMENT_VARIANTS[chosenSentencesIndexes[i]];
   }
   return result;
-}
+};
 
 const createComments = (usedIds) => {
   const result = [];
