@@ -50,3 +50,4 @@ const addPhotos = () => {
   }
 };
 export{addPhotos};
+export {arrayObjects};
